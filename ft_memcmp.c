@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jquiaro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 14:24:13 by marvin            #+#    #+#             */
-/*   Updated: 2024/04/01 16:32:26 by jquiaro-         ###   ########.fr       */
+/*   Created: 2024/04/01 16:31:28 by jquiaro-          #+#    #+#             */
+/*   Updated: 2024/04/01 17:42:04 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	s_len;
+	size_t			i;
+	unsigned char	*cast_s1;
+	unsigned char	*cast_s2;
 
-	s_len = ft_strlen(s);
-	if ((char)c == '\0' && s[s_len] == '\0')
-		return (&((char *)s)[s_len]);
-	while (s_len > 0)
+	cast_s1 = (unsigned char *)s1;
+	cast_s2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
 	{
-		s_len--;
-		if ((char)c == s[s_len])
-			return (&((char *)s)[s_len]);
+		if (cast_s1[i] == cast_s2[i])
+			i++;
+		else
+			return (cast_s1[i] - cast_s2[i]);
 	}
 	return (0);
 }
