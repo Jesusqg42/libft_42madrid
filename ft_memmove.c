@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -39,4 +38,16 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	return (dst);
+}
+
+int main(void)
+{
+	char s1[9] = "skyplace";
+
+	printf("%s\n", s1);
+
+	ft_memmove(s1+1, s1, sizeof(s1));
+
+	printf("%s", s1);
+	return (0);
 }
