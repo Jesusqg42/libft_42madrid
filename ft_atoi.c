@@ -6,14 +6,14 @@
 /*   By: jquiaro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:19:37 by jquiaro-          #+#    #+#             */
-/*   Updated: 2024/04/04 16:25:00 by jquiaro-         ###   ########.fr       */
+/*   Updated: 2024/04/09 16:39:15 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 #include "libft.h"
 
-int	static	ft_space(char c)
+static int	ft_space(char c)
 {
 	return (
 		c == ' ' || c == '\t' || c == '\n' || c == '\v'
