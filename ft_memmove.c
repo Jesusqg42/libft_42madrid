@@ -6,12 +6,11 @@
 /*   By: jquiaro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:05:31 by jquiaro-          #+#    #+#             */
-/*   Updated: 2024/03/21 19:02:47 by jquiaro-         ###   ########.fr       */
+/*   Updated: 2024/04/09 16:11:25 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
