@@ -44,7 +44,7 @@ int	ft_atoi(const char *str)
 		i++;
 		if (result < INT_MIN && sign == -1)
 			return (0);
-		if (result > INT_MAX && sign == 1)
+		else if (result > INT_MAX && sign == 1)
 			return (-1);
 	}
 	return (sign * result);
