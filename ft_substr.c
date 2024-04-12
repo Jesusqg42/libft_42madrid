@@ -6,7 +6,7 @@
 /*   By: jquiaro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:19:33 by jquiaro-          #+#    #+#             */
-/*   Updated: 2024/04/09 16:38:34 by jquiaro-         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:32:30 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*string;
 
 	len = adjust_len(s, start, len);
-	string = (char *)malloc(sizeof(*s) * (len + 1));
+	string = (char *)malloc(sizeof(char) * (len + 1));
+	if (ft_strlen(s) == 0)
+		return (NULL);
 	if (string == 0)
 		return (NULL);
 	i = 0;
