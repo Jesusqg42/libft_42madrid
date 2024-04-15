@@ -6,26 +6,11 @@
 /*   By: jquiaro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:19:33 by jquiaro-          #+#    #+#             */
-/*   Updated: 2024/04/12 12:32:30 by jquiaro-         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:23:00 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	adjust_len(char const *s, unsigned int start, size_t len)
-{
-	size_t	s_len;
-
-	s_len = ft_strlen(s);
-	if (start < s_len)
-	{
-		if (s_len - start < len)
-			len = s_len - start;
-	}
-	else
-		len = 0;
-	return (len);
-}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -33,10 +18,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	j;
 	char	*string;
 
-	len = adjust_len(s, start, len);
+	if (ft_strlen(s) == 0 || start > ft_strlen(s))
+		return (ft_strdup(""));
+	else if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
 	string = (char *)malloc(sizeof(char) * (len + 1));
-	if (ft_strlen(s) == 0)
-		return (NULL);
 	if (string == 0)
 		return (NULL);
 	i = 0;
