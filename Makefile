@@ -25,7 +25,7 @@ SRCS = ft_isalpha.c \
 	ft_atoi.c \
 	ft_calloc.c \
 	ft_strdup.c \
-	ft_strtrim.c 
+	ft_strtrim.c \
 	ft_split.c \
 	ft_putchar_fd.c \
 	t_putstr_fd.c \
