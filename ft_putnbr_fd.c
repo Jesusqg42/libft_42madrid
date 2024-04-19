@@ -6,7 +6,7 @@
 /*   By: jquiaro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 15:19:19 by jquiaro-          #+#    #+#             */
-/*   Updated: 2024/04/16 16:04:30 by jquiaro-         ###   ########.fr       */
+/*   Updated: 2024/04/19 03:29:44 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long int	result;
+	long long int	result;
 
-	result = (long int)n;
+	result = (long long int)n;
 	if (result < 0)
 	{
 		write(fd, "-", 1);
@@ -25,7 +25,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (result > 9)
 	{
 		ft_putnbr_fd(result / 10, fd);
-		ft_putchar_fd(48 + result % 10, fd);
+		ft_putchar_fd(48 + (result % 10), fd);
 	}
 	else
 		ft_putchar_fd(48 + result, fd);
