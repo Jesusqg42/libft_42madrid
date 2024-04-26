@@ -6,15 +6,15 @@
 /*   By: jquiaro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:50:59 by jquiaro-          #+#    #+#             */
-/*   Updated: 2024/04/25 21:20:24 by jquiaro-         ###   ########.fr       */
+/*   Updated: 2024/04/26 20:10:22 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_wordlen(char const *s, char c)
+static int	ft_wordlen(char const *s, char c)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (*s && *s != c)
@@ -24,12 +24,13 @@ static int ft_wordlen(char const *s, char c)
 	}
 	return (len);
 }
-static int ft_count_words(char const *s, char c)
-{
-	int count;
-	int inword;
 
-	count  = 0;
+static int	ft_count_words(char const *s, char c)
+{
+	int	count;
+	int	inword;
+
+	count = 0;
 	inword = 0;
 	while (*s)
 	{
@@ -45,9 +46,9 @@ static int ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static void *free_strs(char **strs)
+static void	*free_strs(char **strs)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (strs[i])
@@ -58,12 +59,13 @@ static void *free_strs(char **strs)
 
 char	**ft_split(char const *s, char c)
 {
-    int		count;
-    int		i;
-    char	**strs;
-    if (!s)
-        return (0);
+	int		count;
+	int		i;
+	char	**strs;
+
 	count = ft_count_words(s, c);
+	if (!s)
+		return (0);
 	strs = (char **)malloc(sizeof(char *) * (count + 1));
 	if (!strs)
 		return (0);
